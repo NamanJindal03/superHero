@@ -7,6 +7,9 @@
 }
 
 /* normal css */
+body{
+    background-color: #2C3335;
+}
 .align-input-bar{
     width: 50%;
     margin: auto;

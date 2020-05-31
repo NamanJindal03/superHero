@@ -1,4 +1,4 @@
-let accessTokenApi = 3203763853000598;
+const accessTokenApi = 3203763853000598;
 //Calling the api for names
 async function heroResultsApi(superHeroName){
     var result = await fetch(`https://superheroapi.com/api/${accessTokenApi}/search/${superHeroName}`);
@@ -36,11 +36,13 @@ function showSuperHeroSuggestions(){
         })
         
 }
-
+function relocate(id){
+    location.href=`individual-hero.html?${id}`;
+}
 //Appending the hero data on the page
 function appendOnPage(name, id){
     var listGroup = document.querySelector('.list-group-a');
-    listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center data-id='${id}'">
+    listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center" data-id='${id}' onclick=relocate(${id}) >
                         ${name}
                         <button onclick=naman()>+</button>
                         </li>`;
@@ -48,7 +50,7 @@ function appendOnPage(name, id){
 
 function appendOnSuggestionBox(name, id){
     var listGroup = document.querySelector('.list-group-b');
-    listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center data-id='${id}'">
+    listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center" data-id='${id}'>
                         ${name}
                         </li>`;
 }

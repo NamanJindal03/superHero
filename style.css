@@ -1,0 +1,20 @@
+body{
+    background-color: #2C3335;
+    color:#EAF0F1;
+}
+.alignment{
+    display:flex;
+    flex-direction: row;
+}
+main{
+    width:60%;
+}
+aside{
+    width:40%;
+}
+.image-box{
+    width:100%;
+}
+.image-box img{
+     width:100%;
+}
