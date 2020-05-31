@@ -18,3 +18,13 @@ aside{
 .image-box img{
      width:100%;
 }
+.custom-button{
+    margin-top: 20px;
+    border-radius: 36px;
+    padding: 10px 33px;
+    outline:none;
+}
+.custom-button:hover{
+    background-color: #cf3333;
+    color:white;
+}

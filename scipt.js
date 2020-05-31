@@ -81,13 +81,20 @@
 
         if (event.keyCode === 13) {
             showSuperHeroResults();
+            document.querySelector('.suggestion-box').style.display = 'none';
         }
     });
 
     //implementing debouncing to restrict number of api calls
-    superHeroInputBox.addEventListener('keyup',debounce(showSuperHeroSuggestions, 400))
+    superHeroInputBox.addEventListener('keyup',debounce(showSuperHeroSuggestions, 300))
 })();
-
+function showNotification(text){
+    document.querySelector('.toast h6').innerText = text;
+    document.querySelector('.toast').style.display="inline";
+    setTimeout(function(){
+        document.querySelector('.toast').style.display="none";
+    },800);
+}
 //Display Suggestion box upon focus
 function activateSuggestionBox(){
     document.querySelector('.suggestion-box').style.display = 'inline';
@@ -95,8 +102,14 @@ function activateSuggestionBox(){
 
 /* Add hereoes to fav list using local storage */
 function addToFav(element){
+    
     var newFavHero = element.dataset.name;
     var heroId = element.dataset.id;
+    if(localStorage.getItem(heroId)==null){
+        showNotification('Hero Added');
+    }else{
+        showNotification('Already Added');
+    }
     localStorage.setItem(heroId, newFavHero);
 }
 /* Opening individual hero page */

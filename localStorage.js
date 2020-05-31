@@ -1,15 +1,20 @@
 /* Adding heroes on page */
 function appendOnPage(name, id){
-    console.log(name + ":" + id);
     var listGroup = document.querySelector('.list-group-a');
     listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center"   >
                         <span onclick=relocate(${id})>${name}</span>
-                        <button onclick=removeFromFav(this) data-name='${name}' data-id='${id}' >X</button>
+                        <button onclick=removeFromFav(this) data-name='${name}' data-id='${id}' style="background: #ff4545">X</button>
                         </li>`;
 }
-
+function showNotification(){
+    document.querySelector('.toast').style.display="inline";
+    setTimeout(function(){
+        document.querySelector('.toast').style.display="none";
+    },800);
+}
 /* Remove Heroes from the localStorage */
 function removeFromFav(element){
+    showNotification();
     localStorage.removeItem(element.dataset.id);
     loadHeroes();
 }
