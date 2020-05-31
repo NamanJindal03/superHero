@@ -49,11 +49,16 @@
                             <button onclick=addToFav(this) data-name='${name}' data-id='${id}' >+</button>
                             </li>`;
     }
-
+    // document.querySelector('.addInInput').addEventListener('click', function(this){
+    //     console.log(this);
+    //     console.log(this.dataset.name);
+    //     document.getElementById("get-superhero").value = this.dataset.name;
+    // })
+    
     /* Appening in search box */
     function appendOnSuggestionBox(name, id){
         var listGroup = document.querySelector('.list-group-b');
-        listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center" data-id='${id}'>
+        listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center addInInput" data-name='${name}'>
                             ${name}
                             </li>`;
     }

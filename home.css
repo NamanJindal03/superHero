@@ -8,6 +8,9 @@
 .list-group-item span{
     width:100%;
 }
+.list-group-item:hover{
+    background-color: #69a3c7;
+}
 .form-control:focus {
     color: #495057;
     background-color: #fff;
