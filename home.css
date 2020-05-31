@@ -5,7 +5,9 @@
 .list-group-b{
     width:100% !important;
 }
-
+.list-group-item span{
+    width:100%;
+}
 /* normal css */
 body{
     background-color: #2C3335;
@@ -24,4 +26,17 @@ body{
     left: 44px;
     z-index: 999;
     display: none;
+}
+.custom-button{
+    margin-top: 20px;
+    border-radius: 36px;
+    padding: 10px 33px;
+}
+
+/* Favourite Hereos File CSS */
+.fav-heroes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }

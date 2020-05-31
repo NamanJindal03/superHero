@@ -42,9 +42,9 @@ function relocate(id){
 //Appending the hero data on the page
 function appendOnPage(name, id){
     var listGroup = document.querySelector('.list-group-a');
-    listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center" data-id='${id}' onclick=relocate(${id}) >
-                        ${name}
-                        <button onclick=naman()>+</button>
+    listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center"   >
+                        <span onclick=relocate(${id})>${name}</span>
+                        <button onclick=addToFav(this) data-name='${name}' data-id='${id}' >+</button>
                         </li>`;
 }
 
@@ -86,7 +86,8 @@ superHeroInputBox.addEventListener("blur", ()=>document.querySelector('.suggesti
 
 
 
-function naman(){
-    console.log("button clicked");
+function addToFav(element){
+    var newFavHero = element.dataset.name;
+    var heroId = element.dataset.id;
+    localStorage.setItem(heroId, newFavHero);
 }
-
