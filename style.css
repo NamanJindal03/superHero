@@ -23,6 +23,7 @@ aside{
     border-radius: 36px;
     padding: 10px 33px;
     outline:none;
+    border:none;
 }
 .custom-button:hover{
     background-color: #cf3333;
