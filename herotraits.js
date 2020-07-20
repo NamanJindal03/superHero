@@ -2,7 +2,7 @@ const accessTokenApi = 3203763853000598;
 
 /* Fetching all the details of hero using its id */
 async function getDetails(id){
-    var result = await fetch(`https://superheroapi.com/api/${accessTokenApi}/${id}`);
+    var result = await fetch(`https://superheroapi.com/api.php/${accessTokenApi}/${id}`);
     let superhero = await result.json();
     return superhero;
 }

@@ -3,7 +3,7 @@
 
     //Calling the api for names
     async function heroResultsApi(superHeroName){
-        var result = await fetch(`https://superheroapi.com/api/${accessTokenApi}/search/${superHeroName}`);
+        var result = await fetch(`https://superheroapi.com/api.php/${accessTokenApi}/search/${superHeroName}`);
         let superhero = await result.json();
         return superhero.results;
     }
